@@ -26,7 +26,7 @@ await conn.sendMessage(m.chat, {text: `${lenguajeGB['smsEnlaceWat']()} ${user}`,
 if (!isBotAdmin) return conn.sendMessage(m.chat, {text: `*⛔ ${lenguajeGB.smsAddB4()} ⛔*\n${listAdmin}\n\n${lenguajeGB['smsAllAdmin']()}`, mentions: [...groupAdmins.map(v => v.id)] }, {quoted: m})
 // m.reply(`${lenguajeGB['smsAllAdmin']()}`)  
 if (isBotAdmin) {
-await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
+await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: bang, participant: delet }})
 await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else if (!bot.restrict) return m.reply(`${lenguajeGB['smsSoloOwner']()}`)
 }
